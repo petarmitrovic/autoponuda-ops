@@ -1,0 +1,9 @@
+---
+# Docker Compose plugin version (leave empty to install latest)
+docker_compose_version: ""
+
+# Optional: add these users to the docker group so they can run docker without sudo
+docker_users: []
+# docker_users:
+#   - ubuntu
+#   - deploy

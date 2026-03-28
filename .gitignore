@@ -1,0 +1,36 @@
+# Ansible
+*.retry
+.vault_pass
+vault_password_file
+*.vault
+
+# Inventory overrides (keep templates, ignore actuals with secrets)
+inventory/group_vars/*/vault.yml
+inventory/host_vars/*/vault.yml
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# SSH keys
+*.pem
+*.key
+id_rsa
+id_ed25519
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

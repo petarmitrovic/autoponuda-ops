@@ -1,0 +1,12 @@
+---
+- name: Install Docker and Docker Compose
+  hosts: vps
+  become: true
+
+  vars:
+    # Uncomment and set to add users to the docker group:
+    # docker_users:
+    #   - ubuntu
+
+  roles:
+    - docker
