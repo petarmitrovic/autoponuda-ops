@@ -1,6 +1,6 @@
 ---
 - name: Deploy Prometheus + Grafana monitoring stack
-  hosts: vps
+  hosts: monitoring
   become: true
 
   vars:

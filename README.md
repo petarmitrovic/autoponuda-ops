@@ -126,7 +126,7 @@ ansible-playbook playbooks/setup_docker.yml
 1. Add the host to `inventory/hosts.yml` under the `vps` group
 2. Run the base setup playbook:
    ```bash
-   ansible-playbook playbooks/setup_server.yml --limit <new-host>
+   ansible-playbook playbooks/setup_server.yml --vault-password-file .vault_pass.local --limit <new-host>
    ```
 3. If the new server should also run the monitoring stack:
    ```bash
