@@ -1,0 +1,4 @@
+---
+# Maps vault-prefixed secrets to the variable names roles expect.
+# This file is plain text and safe to commit.
+grafana_admin_password: "{{ vault_grafana_admin_password }}"

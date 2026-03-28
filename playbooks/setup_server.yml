@@ -1,0 +1,10 @@
+---
+# Baseline playbook applied to every server.
+# Installs Docker and node-exporter (host metrics agent).
+- name: Base server setup
+  hosts: vps
+  become: true
+
+  roles:
+    - docker
+    - node_exporter

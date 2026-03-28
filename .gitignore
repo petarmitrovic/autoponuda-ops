@@ -4,9 +4,8 @@
 vault_password_file
 *.vault
 
-# Inventory overrides (keep templates, ignore actuals with secrets)
-inventory/group_vars/*/vault.yml
-inventory/host_vars/*/vault.yml
+# Local vault password files — never commit these
+.vault_pass.local
 
 # Python
 __pycache__/

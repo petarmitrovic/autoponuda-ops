@@ -1,0 +1,20 @@
+---
+# Component versions
+prometheus_version: "v3.2.0"
+grafana_version: "11.6.0"
+
+# Deployment directory on the host
+monitoring_dir: /opt/monitoring
+
+# Exposed ports
+prometheus_port: 9090
+grafana_port: 3000
+
+# node_exporter_port must match the value set in the node_exporter role (default: 9100)
+node_exporter_port: 9100
+
+# Grafana admin credentials — password is prompted at playbook runtime (no default on purpose)
+grafana_admin_user: admin
+
+# Prometheus retention
+prometheus_retention: "15d"
