@@ -14,5 +14,5 @@ services:
     command:
       - "--path.procfs=/host/proc"
       - "--path.sysfs=/host/sys"
-      - "--web.listen-address=127.0.0.1:{{ node_exporter_port }}"
+      - "--web.listen-address=0.0.0.0:{{ node_exporter_port }}"
       - "--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)"
