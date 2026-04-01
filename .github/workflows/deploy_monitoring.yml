@@ -29,9 +29,6 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" | base64 -d > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
 
-      - name: Verify SSH key
-        run: ssh-keygen -l -f ~/.ssh/id_ed25519
-
       - name: Write vault password file
         run: echo "${{ secrets.ANSIBLE_VAULT_PASSWORD }}" > .vault_pass.ci
         # .vault_pass.ci is never committed — it lives only in the runner's workspace
@@ -40,6 +37,7 @@ jobs:
         run: >
           ansible-playbook playbooks/setup_monitoring.yml
           --vault-password-file .vault_pass.ci
+          -vvv
 
       - name: Clean up vault password file
         if: always()
