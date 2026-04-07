@@ -1,0 +1,22 @@
+services:
+
+  autoponuda-backend:
+    image: {{ backend_image }}:{{ backend_version }}
+    container_name: autoponuda-backend
+    restart: unless-stopped
+    networks:
+      - autoponuda
+    ports:
+      - "127.0.0.1:{{ backend_port }}:8080"
+    environment:
+      SPRING_DATASOURCE_URL: "{{ backend_datasource_url }}"
+      SPRING_DATASOURCE_USERNAME: "{{ backend_datasource_username }}"
+      SPRING_DATASOURCE_PASSWORD: "{{ backend_datasource_password }}"
+
+      AP_OBJECT_STORAGE_ENDPOINT: "{{ ap_object_storage_endpoint }}"
+      AP_OBJECT_STORAGE_ACCESS_KEY_ID: "{{ ap_object_storage_access_key_id }}"
+      AP_OBJECT_STORAGE_SECRET_ACCESS_KEY: "{{ ap_object_storage_secret_access_key }}"
+
+networks:
+  autoponuda:
+    external: true

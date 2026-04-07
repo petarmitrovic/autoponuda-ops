@@ -14,6 +14,9 @@ postgres_db: atpnd
 pgbouncer_image: edoburu/pgbouncer
 pgbouncer_version: latest
 
+# Shared Docker network connecting pgbouncer to the backend stack
+shared_network: autoponuda
+
 # Port mapping — pgbouncer is the only entry point; host port 6432 bound to loopback only
 pgbouncer_port: 6432
 

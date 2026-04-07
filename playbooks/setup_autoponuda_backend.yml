@@ -1,0 +1,11 @@
+---
+- name: Deploy autoponuda-backend stack
+  hosts: autoponuda_backend
+  become: true
+
+  vars:
+    # Required — set to the commit hash being deployed:
+    # backend_version: "abc1234"
+
+  roles:
+    - autoponuda-backend

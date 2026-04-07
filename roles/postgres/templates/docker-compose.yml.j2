@@ -19,6 +19,7 @@ services:
     restart: unless-stopped
     networks:
       - postgres
+      - autoponuda
     ports:
       - "127.0.0.1:{{ pgbouncer_port }}:5432"
     environment:
@@ -37,6 +38,8 @@ services:
 networks:
   postgres:
     driver: bridge
+  autoponuda:
+    external: true
 
 volumes:
   postgres_data:

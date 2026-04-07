@@ -1,0 +1,25 @@
+---
+# Image — version must be overridden with the commit hash at deploy time
+backend_image: ghcr.io/petarmitrovic/autoponuda-backend
+backend_version: latest
+
+# Deployment directory on the host
+backend_dir: /opt/autoponuda-backend
+
+# Port — bound to loopback only; nginx will be the public entry point
+backend_port: 8080
+
+# Shared Docker network connecting backend to pgbouncer
+shared_network: autoponuda
+
+# GHCR credentials — ghcr_token has no default and must be supplied via vault
+ghcr_username: petarmitrovic
+
+# Spring datasource — URL and username derive from the postgres role defaults;
+# backend_datasource_password has no default and must be supplied via vault
+backend_datasource_url: "jdbc:postgresql://pgbouncer:5432/atpnd"
+backend_datasource_username: atpnd
+
+ap_object_storage_endpoint: "https://2c2b506326a3f70630942328a7cc7f52.r2.cloudflarestorage.com"
+
+backend_version: "sha-73b6e1a311ec161d3edcf2a8178edb6778de7941"
