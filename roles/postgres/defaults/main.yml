@@ -1,0 +1,23 @@
+---
+# Postgres image
+postgres_image: postgis/postgis
+postgres_version: "18-3.6-alpine"
+
+# Deployment directory on the host
+postgres_dir: /opt/postgres
+
+# Database credentials — postgres_password has no default and must be supplied at runtime or via vault
+postgres_user: atpnd
+postgres_db: atpnd
+
+# PgBouncer image
+pgbouncer_image: edoburu/pgbouncer
+pgbouncer_version: latest
+
+# Port mapping — pgbouncer is the only entry point; host port 6432 bound to loopback only
+pgbouncer_port: 6432
+
+# Connection pooling
+pgbouncer_pool_mode: transaction
+pgbouncer_max_client_conn: 100
+pgbouncer_default_pool_size: 20

@@ -1,0 +1,15 @@
+---
+- name: Deploy Postgres stack
+  hosts: postgres
+  become: true
+
+  vars:
+    # Override versions/settings if needed:
+    # postgres_image: postgres
+    # postgres_version: "17"
+    # postgres_port: 6432
+    # postgres_user: postgres
+    # postgres_db: postgres
+
+  roles:
+    - postgres

@@ -99,6 +99,11 @@ Deploys Prometheus and Grafana on the target host. Prometheus is pre-configured 
 ansible-playbook playbooks/setup_monitoring.yml --vault-password-file .vault_pass.local
 ```
 
+This command is captured in a script, so the following does the same:
+```
+./scripts/run_playbook.sh playbooks/setup_monitoring.yml
+```
+
 Services are bound to `127.0.0.1` only and not reachable from the outside. To access Grafana locally, use SSH port forwarding:
 
 ```bash

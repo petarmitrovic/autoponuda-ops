@@ -1,0 +1,6 @@
+---
+- name: Restart postgres stack
+  community.docker.docker_compose_v2:
+    project_src: "{{ postgres_dir }}"
+    state: present
+    recreate: always
